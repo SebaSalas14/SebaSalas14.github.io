@@ -16,8 +16,11 @@
     <meta property="og:description"
         content="Del dato crudo a la decisión: Databricks, dbt, Power BI, SQL y Python. Ingeniero biomédico reconvertido a datos, en Barcelona." />
     <meta property="og:url" content="https://sebasalas14.github.io/" />
-    <meta property="og:image" content="https://sebasalas14.github.io/assets/img/profile.jpg" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://sebasalas14.github.io/assets/img/og-card.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sebastian Salas · Data Analyst &amp; Data Engineer" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -94,20 +97,19 @@
                         <p class="hero-loc mono"><i class="fas fa-map-marker-alt"></i> <span id="hero-loc"></span></p>
                         <div class="hero-cta">
                             <a class="btn-data primary js-scroll-trigger" href="#experience"><i class="fas fa-stream"></i> <span data-i18n="hero.cta.exp"></span></a>
+                            <button type="button" class="btn-data js-cv"><i class="fas fa-file-download"></i> <span data-i18n="hero.cta.cv"></span></button>
                             <a class="btn-data js-scroll-trigger" href="#contact"><i class="fas fa-paper-plane"></i> <span data-i18n="hero.cta.contact"></span></a>
                         </div>
                     </div>
                     <div class="term reveal" aria-label="SQL">
                         <div class="term-bar"><span></span><span></span><span></span><em>psql · career_db</em></div>
-                        <div class="term-body">
+                        <div class="term-body" aria-live="polite">
                             <div><span class="term-prompt">sebastian@data:~$</span> <span id="term-query"></span><span class="caret" id="term-caret"></span></div>
-                            <div class="term-result" id="term-result" hidden>
-                                <table>
-                                    <thead><tr><th>role</th><th>company</th><th>since</th></tr></thead>
-                                    <tbody><tr><td>Data Owner · Scalability</td><td>Vibia</td><td>2026-04</td></tr></tbody>
-                                </table>
-                                <div class="term-ok">✔ <span data-i18n="hero.term.status"></span></div>
-                            </div>
+                            <div class="term-result" id="term-result" hidden></div>
+                        </div>
+                        <div class="term-foot">
+                            <span class="term-try" data-i18n="term.try"></span>
+                            <div class="term-qs" id="term-qs"></div>
                         </div>
                     </div>
                 </div>
@@ -132,6 +134,7 @@
             <div class="resume-section-content">
                 <p class="mono-label">// 03</p>
                 <h2 class="section-title" data-i18n="exp.title"></h2>
+                <div class="filter-bar" id="exp-filter" hidden></div>
                 <div class="card-d gantt-card reveal">
                     <div class="gantt-head">
                         <h3 class="sub-title m-0" data-i18n="exp.gantt"></h3>
@@ -161,7 +164,9 @@
             <div class="resume-section-content">
                 <p class="mono-label">// 05</p>
                 <h2 class="section-title" data-i18n="skills.title"></h2>
+                <p class="hint mono"><i class="fas fa-mouse-pointer"></i> <span data-i18n="skills.hint"></span></p>
                 <div class="grid-cards" id="skill-list"></div>
+                <div class="skill-result card-d" id="skill-result" hidden></div>
                 <h3 class="sub-title" data-i18n="skills.languages"></h3>
                 <div class="langs" id="lang-list"></div>
             </div>
@@ -190,6 +195,7 @@
                 <p class="lead-d" data-i18n="contact.text"></p>
                 <div class="hero-cta">
                     <a class="btn-data primary" href="mailto:sebaasalas14@gmail.com"><i class="fas fa-envelope"></i> <span data-i18n="contact.email"></span></a>
+                    <button type="button" class="btn-data js-cv"><i class="fas fa-file-download"></i> <span data-i18n="hero.cta.cv"></span></button>
                     <a class="btn-data" href="https://www.linkedin.com/in/sebastian-salas/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
                     <a class="btn-data" href="https://github.com/SebaSalas14" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
                 </div>

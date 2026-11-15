@@ -16,6 +16,9 @@ window.SITE = {
     email: "sebaasalas14@gmail.com",
     linkedin: "https://www.linkedin.com/in/sebastian-salas/",
     github: "https://github.com/SebaSalas14",
+    web: "https://sebasalas14.github.io",
+    // Lo que hago hoy: aparece en la consulta "rol actual" del terminal.
+    now: "Data Owner · Scalability",
     roles: [
       { es: "Data Engineer", en: "Data Engineer", ca: "Data Engineer" },
       { es: "Data Analyst", en: "Data Analyst", ca: "Data Analyst" },
@@ -43,7 +46,18 @@ window.SITE = {
     "hero.hello": { es: "// hola, soy", en: "// hi, I'm", ca: "// hola, soc" },
     "hero.cta.exp": { es: "Ver trayectoria", en: "See my journey", ca: "Veure trajectòria" },
     "hero.cta.contact": { es: "Hablemos", en: "Let's talk", ca: "Parlem" },
-    "hero.term.status": { es: "1 fila · 4 ms", en: "1 row · 4 ms", ca: "1 fila · 4 ms" },
+    "hero.cta.cv": { es: "Descargar CV", en: "Download CV", ca: "Descarregar CV" },
+    "cv.loading": { es: "Generando…", en: "Generating…", ca: "Generant…" },
+    "cv.footer": { es: "CV generado desde", en: "CV generated from", ca: "CV generat des de" },
+
+    "term.try": { es: "// prueba una consulta", en: "// try a query", ca: "// prova una consulta" },
+    "term.q.now": { es: "rol actual", en: "current role", ca: "rol actual" },
+    "term.q.stack": { es: "stack actual", en: "current stack", ca: "stack actual" },
+    "term.q.domain": { es: "datos vs salud", en: "data vs health", ca: "dades vs salut" },
+    "term.q.edu": { es: "formación", en: "education", ca: "formació" },
+    "term.q.langs": { es: "idiomas", en: "languages", ca: "idiomes" },
+    "term.row": { es: "fila", en: "row", ca: "fila" },
+    "term.rows": { es: "filas", en: "rows", ca: "files" },
     "kpi.years": { es: "años en datos", en: "years in data", ca: "anys en dades" },
     "kpi.roles": { es: "roles", en: "roles", ca: "rols" },
     "kpi.masters": { es: "másters", en: "master's degrees", ca: "màsters" },
@@ -68,6 +82,16 @@ window.SITE = {
     "edu.title": { es: "Formación", en: "Education", ca: "Formació" },
     "skills.title": { es: "Habilidades", en: "Skills", ca: "Habilitats" },
     "skills.languages": { es: "Idiomas", en: "Languages", ca: "Idiomes" },
+    "skills.hint": {
+      es: "Toca una habilidad para ver en qué roles la usé.",
+      en: "Tap a skill to see which roles I used it in.",
+      ca: "Toca una habilitat per veure en quins rols l'he fet servir."
+    },
+    "filter.by": { es: "Filtrando por", en: "Filtering by", ca: "Filtrant per" },
+    "filter.role": { es: "rol", en: "role", ca: "rol" },
+    "filter.roles": { es: "roles", en: "roles", ca: "rols" },
+    "filter.goto": { es: "Ver en experiencia", en: "See in experience", ca: "Veure a experiència" },
+    "filter.clear": { es: "Quitar filtro", en: "Clear filter", ca: "Treure filtre" },
 
     "certs.title": { es: "Certificaciones", en: "Certifications", ca: "Certificacions" },
     "certs.all": { es: "Todas", en: "All", ca: "Totes" },
@@ -113,6 +137,13 @@ window.SITE = {
       "Les dades van arribar abans que el canvi de rumb: a enginyeria biomèdica vaig treballar molt amb estadística, i al meu treball final de grau vaig fer servir models estadístics de tota mena; d'aquí va néixer la idea de dedicar-me a les dades. I al manteniment d'equipament hospitalari ja les fèiem servir per planificar controls preventius i predictius. Aquest origen em dona una cosa poc habitual: entenc què significa la dada abans que arribi al pipeline, i sé parlar amb qui la genera.",
       "I construeixo amb IA: faig servir eines com Claude per automatitzar tasques i crear solucions a mida que retornen temps a les persones."
     ]
+  },
+
+  // Resumen corto para el CV en PDF (el "about" completo es demasiado largo para un CV).
+  cvSummary: {
+    es: "Ingeniero biomédico reconvertido a datos. Hoy trabajo como Data Analyst / Data Engineer en Vibia, cubriendo el dato de punta a punta con Databricks, dbt y Power BI, y soy owner del área operativa de Scalability. Antes crecí de Business Data Analyst a Data Engineer en NTT DATA con pipelines ETL, optimización de bases de datos y dashboards en Qlik Sense. Mi origen en estadística, investigación y mantenimiento preventivo/predictivo de equipamiento hospitalario me ayuda a entender el dato antes de que llegue al pipeline.",
+    en: "Biomedical engineer turned data professional. I currently work as a Data Analyst / Data Engineer at Vibia, covering data end to end with Databricks, dbt and Power BI, and I own the Scalability operational area. Before that I grew from Business Data Analyst to Data Engineer at NTT DATA, building ETL pipelines, tuning databases and delivering Qlik Sense dashboards. My background in statistics, research and preventive/predictive maintenance of hospital equipment helps me understand data before it reaches the pipeline.",
+    ca: "Enginyer biomèdic reconvertit a dades. Avui treballo com a Data Analyst / Data Engineer a Vibia, cobrint la dada de punta a punta amb Databricks, dbt i Power BI, i soc owner de l'àrea operativa de Scalability. Abans vaig créixer de Business Data Analyst a Data Engineer a NTT DATA amb pipelines ETL, optimització de bases de dades i dashboards a Qlik Sense. El meu origen en estadística, recerca i manteniment preventiu/predictiu d'equipament hospitalari m'ajuda a entendre la dada abans que arribi al pipeline."
   },
 
   pipeline: [
@@ -428,7 +459,7 @@ window.SITE = {
   skills: [
     { icon: "fa-project-diagram", name: { es: "Ingeniería de datos", en: "Data engineering", ca: "Enginyeria de dades" }, items: ["Databricks", "Apache Spark", "dbt", "ETL / ELT", "Data Lake", "DWH", "Data modeling"] },
     { icon: "fa-chart-bar", name: { es: "BI y analítica", en: "BI & analytics", ca: "BI i analítica" }, items: ["Power BI", "Qlik Sense", "KPI reporting", "Google Analytics"] },
-    { icon: "fa-code", name: { es: "Lenguajes", en: "Languages", ca: "Llenguatges" }, items: ["Python", "SQL", "Oracle SQL", "Pandas"] },
+    { icon: "fa-code", name: { es: "Lenguajes", en: "Programming", ca: "Llenguatges" }, items: ["Python", "SQL", "Oracle SQL", "Pandas"] },
     { icon: "fa-cloud", name: { es: "Cloud y DevOps", en: "Cloud & DevOps", ca: "Cloud i DevOps" }, items: ["Azure Databricks", "GCP", "BigQuery", "Git", "CI/CD", "Jira"] },
     { icon: "fa-brain", name: { es: "IA", en: "AI", ca: "IA" }, items: ["Generative AI", "Claude", "Deep Learning"] },
     { icon: "fa-heartbeat", name: { es: "Salud", en: "Healthcare", ca: "Salut" }, items: ["Medical devices", "Clinical engineering", "HL7", "Biosignals"] }

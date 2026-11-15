@@ -356,6 +356,12 @@ section.resume-section {
 .chip:hover { color: var(--amber); border-color: var(--border-hot); background: rgba(255, 181, 71, 0.08); }
 .chip.big { font-size: 0.82rem; padding: 0.4rem 0.9rem; color: var(--text); }
 
+/* Habilidad clicable: filtra los roles donde aparece */
+.chip-btn { cursor: pointer; }
+.chip-btn sup { margin-left: 0.3rem; font-size: 0.6rem; top: -0.35em; color: var(--amber); }
+.chip-btn.is-on { color: #160f05; background: var(--amber); border-color: var(--amber); box-shadow: 0 0 14px rgba(255, 181, 71, 0.45); }
+.chip-btn.is-on sup { color: #160f05; }
+
 ul.ticks { list-style: none; padding: 0; margin: 0.75rem 0 1rem; }
 ul.ticks li { position: relative; padding-left: 1.3rem; margin-bottom: 0.35rem; }
 ul.ticks li::before { content: "▸"; position: absolute; left: 0; color: var(--amber); }
@@ -379,6 +385,8 @@ ul.ticks li::before { content: "▸"; position: absolute; left: 0; color: var(--
 }
 
 .btn-data:hover { color: var(--amber); border-color: var(--border-hot); transform: translateY(-2px); }
+button.btn-data { cursor: pointer; }
+.btn-data:disabled { opacity: 0.6; cursor: progress; transform: none; }
 
 .btn-data.primary {
   color: #160f05;
@@ -474,15 +482,47 @@ ul.ticks li::before { content: "▸"; position: absolute; left: 0; color: var(--
 .term-bar span:nth-child(3) { background: #28c840; }
 .term-bar em { margin-left: auto; color: var(--muted); font-style: normal; font-size: 0.72rem; }
 
-.term-body { padding: 1.1rem 1.1rem 1.3rem; min-height: 11rem; color: var(--heading); word-break: break-word; }
+.term-body { padding: 1.1rem 1.1rem 1.3rem; min-height: 15rem; color: var(--heading); word-break: break-word; }
 .term-prompt { color: var(--green); }
 
 .term-result { margin-top: 0.9rem; animation: fadeUp 0.4s ease both; overflow-x: auto; }
 .term-result table { border-collapse: collapse; width: 100%; }
-.term-result th, .term-result td { border: 1px solid var(--border); padding: 0.35rem 0.6rem; text-align: left; white-space: nowrap; }
+.term-result th, .term-result td { border: 1px solid var(--border); padding: 0.35rem 0.6rem; text-align: left; vertical-align: top; }
+.term-result th, .term-result td.num { white-space: nowrap; }
 .term-result th { color: var(--amber); font-weight: 500; }
 .term-result td { color: var(--cyan); }
 .term-ok { color: var(--muted); margin-top: 0.6rem; }
+
+/* Consultas sugeridas */
+.term-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  padding: 0.75rem 1.1rem 0.9rem;
+  border-top: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.term-try { color: var(--amber); font-size: 0.72rem; }
+.term-qs { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+.term-q {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--cyan);
+  background: rgba(62, 230, 255, 0.05);
+  border: 1px solid rgba(62, 230, 255, 0.22);
+  border-radius: 6px;
+  padding: 0.22rem 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.term-q::before { content: "> "; opacity: 0.5; }
+.term-q:hover { color: var(--amber); border-color: var(--border-hot); }
+.term-q.is-on { color: #160f05; background: var(--amber); border-color: var(--amber); }
+.term-q:focus-visible, .chip-btn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 
 /* KPIs */
 .kpis {
@@ -695,6 +735,32 @@ ul.ticks li::before { content: "▸"; position: absolute; left: 0; color: var(--
 .badge-d.live { color: var(--green); background: rgba(90, 247, 142, 0.1); border: 1px solid rgba(90, 247, 142, 0.3); }
 .badge-d.up { color: var(--amber); background: rgba(255, 181, 71, 0.08); border: 1px solid rgba(255, 181, 71, 0.3); }
 
+/* Filtro por habilidad */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: -1rem 0 1.5rem;
+  padding: 0.6rem 0.6rem 0.6rem 1rem;
+  border: 1px solid var(--border-hot);
+  border-radius: 10px;
+  background: rgba(255, 181, 71, 0.06);
+  font-size: 0.9rem;
+  animation: fadeUp 0.3s ease both;
+}
+
+.filter-bar strong { color: var(--amber); }
+.filter-bar .btn-data, .skill-result .btn-data:not(.primary) { padding: 0.45rem 0.9rem; font-size: 0.78rem; }
+
+body.is-filtering .g-row[data-role]:not(.is-hit) { opacity: 0.22; }
+body.is-filtering .g-row.is-hit .g-label strong { color: var(--amber); }
+body.is-filtering .tl-item:not(.is-hit) { opacity: 0.35; }
+body.is-filtering .tl-role:not(.is-hit) { opacity: 0.4; }
+body.is-filtering .tl-item.is-hit { border-color: var(--border-hot); }
+.g-row, .tl-role { transition: opacity 0.3s; }
+
 /* ---------- Formación ---------- */
 
 .edu { display: flex; gap: 1.1rem; align-items: flex-start; }
@@ -703,6 +769,18 @@ ul.ticks li::before { content: "▸"; position: absolute; left: 0; color: var(--
 .edu p { margin: 0; color: var(--muted); font-size: 0.9rem; }
 
 /* ---------- Habilidades ---------- */
+
+.hint { color: var(--muted); font-size: 0.8rem; margin: -1.5rem 0 1.5rem; }
+.hint i { color: var(--amber); margin-right: 0.3rem; }
+
+.skill-result { margin-top: 1.25rem; border-color: var(--border-hot); animation: fadeUp 0.3s ease both; }
+.skill-result-head { margin-bottom: 0.6rem; }
+.skill-result-head strong { color: var(--amber); }
+.skill-result .hero-cta { margin-top: 1rem; }
+.hits { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.35rem; }
+.hits li { padding-left: 1.3rem; position: relative; }
+.hits li::before { content: "▸"; position: absolute; left: 0; color: var(--amber); }
+.hits strong { color: var(--heading); }
 
 .skill h3 { display: flex; align-items: center; gap: 0.65rem; font-size: 1.35rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; }
 .skill h3 i { color: var(--amber); font-size: 1.1rem; }
