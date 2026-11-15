@@ -38,6 +38,13 @@
         });
     }
 
+    // Nombre de empresa/centro, enlazado a su web si la tiene
+    function orgLink(name, url) {
+        if (!url) return esc(name);
+        return '<a class="org-link" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(name) +
+            '&nbsp;<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>';
+    }
+
     function $(id) { return document.getElementById(id); }
 
     /* ---------- Fechas ---------- */
@@ -182,7 +189,7 @@
             }).join("");
             var domain = co.roles[0].domain;
             return '<article class="tl-item card-d reveal ' + domain + (current ? " is-live" : "") + '">' +
-                '<header class="tl-company"><h3>' + esc(co.company) + '</h3><span class="mono">' + esc(t(co.place)) + "</span></header>" +
+                '<header class="tl-company"><h3>' + orgLink(co.company, co.url) + '</h3><span class="mono">' + esc(t(co.place)) + "</span></header>" +
                 roles + "</article>";
         }).join("");
     }
@@ -193,7 +200,7 @@
             return '<article class="card-d edu reveal">' +
                 '<i class="fas ' + icons[e.kind] + ' edu-icon"></i>' +
                 '<div><span class="mono dim">' + esc(e.start) + " → " + esc(e.end) + "</span>" +
-                "<h3>" + esc(t(e.degree)) + "</h3><p>" + esc(e.school) + "</p></div></article>";
+                "<h3>" + esc(t(e.degree)) + "</h3><p>" + orgLink(e.school, e.url) + "</p></div></article>";
         }).join("");
     }
 

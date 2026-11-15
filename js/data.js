@@ -96,21 +96,21 @@ window.SITE = {
       "Soy ingeniero biomédico y trabajo en datos. Me muevo en la intersección entre ingeniería, negocio y salud: diseño los modelos y pipelines que convierten datos dispersos en decisiones fiables.",
       "Hoy trabajo como Data Analyst / Data Engineer en Vibia, cubriendo el dato de punta a punta: desde los pipelines con Databricks y dbt hasta los dashboards en Power BI. Además soy owner del área operativa de Scalability, donde defino los modelos de datos y aplico prácticas DevOps (CI/CD, control de versiones) a todo el ciclo de vida del dato.",
       "Antes, en NTT DATA, crecí de Business Data Analyst a Data Engineer en menos de dos años: pipelines ETL desde el Data Lake hasta el reporting, optimización de bases de datos para analítica a gran escala y dashboards en Qlik Sense para clientes de media, retail y banca.",
-      "Mi origen (equipamiento hospitalario, ingeniería clínica e investigación en electrofisiología) me da algo poco común en datos: entiendo qué significa el dato antes de que llegue al pipeline, y sé hablar con quien lo genera.",
+      "Los datos llegaron antes que el cambio de rumbo: en ingeniería biomédica trabajé mucho con estadística, y en mi trabajo final de graduación usé modelos estadísticos de todo tipo; ahí nació la idea de dedicarme a los datos. Y en el mantenimiento de equipamiento hospitalario ya los usábamos para planificar controles preventivos y predictivos. Ese origen me da algo poco común: entiendo qué significa el dato antes de que llegue al pipeline, y sé hablar con quien lo genera.",
       "Y construyo con IA: uso herramientas como Claude para automatizar tareas y crear soluciones a medida que devuelven tiempo a las personas."
     ],
     en: [
       "I'm a biomedical engineer working in data. I operate where engineering, business and healthcare meet: I design the models and pipelines that turn scattered data into decisions people can trust.",
       "Today I work as a Data Analyst / Data Engineer at Vibia, covering data end to end: from Databricks and dbt pipelines to Power BI dashboards. I'm also the owner of the Scalability operational area, where I define the data models and bring DevOps practices (CI/CD, version control) to the whole data lifecycle.",
       "Before that, at NTT DATA, I grew from Business Data Analyst to Data Engineer in under two years: ETL pipelines from the Data Lake to reporting layers, database tuning for large-scale analytics and Qlik Sense dashboards for media, retail and banking clients.",
-      "My background (hospital equipment, clinical engineering and electrophysiology research) gives me something rare in data: I understand what the data means before it reaches the pipeline, and I can talk to the people who generate it.",
+      "Data came before the career switch: biomedical engineering was full of statistics, and my final degree project relied on many statistical models; that is where the idea of working in data was born. In hospital equipment maintenance we already used data to plan preventive and predictive checks. That background gives me something rare: I understand what the data means before it reaches the pipeline, and I can talk to the people who generate it.",
       "And I build with AI: I use tools like Claude to automate tasks and create tailored solutions that give people their time back."
     ],
     ca: [
       "Soc enginyer biomèdic i treballo en dades. Em moc a la intersecció entre enginyeria, negoci i salut: dissenyo els models i pipelines que converteixen dades disperses en decisions fiables.",
       "Avui treballo com a Data Analyst / Data Engineer a Vibia, cobrint la dada de punta a punta: des dels pipelines amb Databricks i dbt fins als dashboards a Power BI. A més, soc owner de l'àrea operativa de Scalability, on defineixo els models de dades i aplico pràctiques DevOps (CI/CD, control de versions) a tot el cicle de vida de la dada.",
       "Abans, a NTT DATA, vaig créixer de Business Data Analyst a Data Engineer en menys de dos anys: pipelines ETL des del Data Lake fins al reporting, optimització de bases de dades per a analítica a gran escala i dashboards a Qlik Sense per a clients de mitjans, retail i banca.",
-      "El meu origen (equipament hospitalari, enginyeria clínica i recerca en electrofisiologia) em dona una cosa poc habitual en dades: entenc què significa la dada abans que arribi al pipeline, i sé parlar amb qui la genera.",
+      "Les dades van arribar abans que el canvi de rumb: a enginyeria biomèdica vaig treballar molt amb estadística, i al meu treball final de grau vaig fer servir models estadístics de tota mena; d'aquí va néixer la idea de dedicar-me a les dades. I al manteniment d'equipament hospitalari ja les fèiem servir per planificar controls preventius i predictius. Aquest origen em dona una cosa poc habitual: entenc què significa la dada abans que arribi al pipeline, i sé parlar amb qui la genera.",
       "I construeixo amb IA: faig servir eines com Claude per automatitzar tasques i crear solucions a mida que retornen temps a les persones."
     ]
   },
@@ -127,6 +127,7 @@ window.SITE = {
   experience: [
     {
       company: "Vibia",
+      url: "https://vibia.com/",
       place: { es: "Gavà · Híbrido", en: "Gavà · Hybrid", ca: "Gavà · Híbrid" },
       roles: [
         {
@@ -167,6 +168,7 @@ window.SITE = {
     },
     {
       company: "NTT DATA Europe & Latam",
+      url: "https://es.nttdata.com/",
       place: { es: "Barcelona · Híbrido", en: "Barcelona · Hybrid", ca: "Barcelona · Híbrid" },
       roles: [
         {
@@ -250,6 +252,7 @@ window.SITE = {
     },
     {
       company: "QDQmedia",
+      url: "https://www.qdq.com/",
       place: { es: "Madrid · Remoto", en: "Madrid · Remote", ca: "Madrid · Remot" },
       roles: [
         {
@@ -309,6 +312,7 @@ window.SITE = {
     },
     {
       company: "SM Medical · Alpinion Medical Systems",
+      url: "https://www.alpinion.com/",
       place: { es: "Tucumán, Argentina", en: "Tucumán, Argentina", ca: "Tucumán, Argentina" },
       roles: [
         {
@@ -334,6 +338,7 @@ window.SITE = {
     },
     {
       company: "Consejo Interuniversitario Nacional",
+      url: "https://www.cin.edu.ar/",
       place: { es: "Tucumán, Argentina", en: "Tucumán, Argentina", ca: "Tucumán, Argentina" },
       roles: [
         {
@@ -393,11 +398,13 @@ window.SITE = {
   education: [
     {
       school: "EAE Business School",
+      url: "https://www.eae.es/",
       degree: { es: "Máster en Big Data & Analytics", en: "Master's in Big Data & Analytics", ca: "Màster en Big Data & Analytics" },
       start: "2023", end: "2024", kind: "master"
     },
     {
       school: "Universitat Politècnica de Catalunya (UPC)",
+      url: "https://www.upc.edu/",
       degree: {
         es: "Máster en Business Intelligence e Innovación Tecnológica, Big Data & Analytics",
         en: "Master's in Business Intelligence & Technological Innovation, Big Data & Analytics",
@@ -407,6 +414,7 @@ window.SITE = {
     },
     {
       school: "Universidad Nacional de Tucumán",
+      url: "https://www.unt.edu.ar/",
       degree: { es: "Ingeniería Biomédica", en: "Biomedical Engineering", ca: "Enginyeria Biomèdica" },
       start: "2015", end: "2022", kind: "degree"
     },
